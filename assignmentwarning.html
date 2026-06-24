@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ ACADEMIC WARNING · MISSING ASSIGNMENTS</title>
+    <!-- CATCHY FONTS: Orbitron for headings, Poppins for data -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 30% 10%, #2a0000, #050000);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            position: relative;
+        }
+
+        /* CRT scanning line effect (subtle) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .warning-container {
+            background: rgba(18, 0, 0, 0.92);
+            backdrop-filter: blur(10px);
+            border: 4px solid #ff2200;
+            border-radius: 28px;
+            padding: 35px 30px;
+            max-width: 1300px;
+            width: 100%;
+            box-shadow: 0 0 60px rgba(255, 0, 0, 0.5), inset 0 0 80px rgba(255, 0, 0, 0.08);
+            animation: borderPulse 2s infinite alternate ease-in-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes borderPulse {
+            0% {
+                box-shadow: 0 0 40px rgba(255, 20, 0, 0.4), inset 0 0 30px rgba(255, 0, 0, 0.05);
+                border-color: #cc0000;
+            }
+            100% {
+                box-shadow: 0 0 100px rgba(255, 80, 0, 0.9), inset 0 0 60px rgba(255, 50, 0, 0.15);
+                border-color: #ff5500;
+            }
+        }
+
+        /* ----- CATCHY GLITCH HEADER ----- */
+        .glitch-header {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 2.6rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg, #ff3333, #ff8800, #ff3333);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientGlow 3s ease infinite, glitchText 2.2s infinite steps(1);
+            filter: drop-shadow(0 0 25px rgba(255, 50, 0, 0.8));
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+
+        @keyframes gradientGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glitchText {
+            0% { transform: skew(0deg, 0deg); text-shadow: 3px 0 #ff0000, -3px 0 #00ff00; }
+            15% { transform: skew(3deg, -1deg); text-shadow: -5px 0 #ff0000, 5px 0 #00ff00; }
+            30% { transform: skew(-3deg, 1deg); text-shadow: 6px 0 #ff0000, -6px 0 #00ff00; }
+            45% { transform: skew(2deg, 2deg); text-shadow: -3px 0 #ff0000, 3px 0 #00ff00; }
+            60% { transform: skew(-2deg, -2deg); text-shadow: 5px 0 #ff0000, -5px 0 #00ff00; }
+            75% { transform: skew(0deg, 0deg); text-shadow: -2px 0 #ff0000, 2px 0 #00ff00; }
+            100% { transform: skew(0deg, 0deg); text-shadow: 0 0 30px #ff2200, 0 0 60px #aa0000; }
+        }
+
+        .sub-header {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #ff9999;
+            font-size: 1.1rem;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            border-bottom: 2px dashed #660000;
+            padding-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .sub-header span {
+            background: #2a0505;
+            padding: 6px 22px;
+            border-radius: 50px;
+            border: 1px solid #ff3333;
+            color: #ffaaaa;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            font-weight: 700;
+        }
+
+        /* ----- TABLE STYLES (CATCHY & MODERN) ----- */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid #4a0000;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            min-width: 700px;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1f0000, #3a0000);
+            border-bottom: 4px solid #ff3300;
+        }
+
+        th {
+            padding: 20px 18px;
+            text-align: left;
+            color: #ff7744;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-right: 1px solid #330000;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 15px rgba(255, 68, 0, 0.4);
+        }
+        th:last-child { border-right: none; }
+
+        tbody tr {
+            border-bottom: 1px solid #2a0a0a;
+            transition: all 0.25s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 50, 0, 0.15);
+            box-shadow: inset 0 0 30px rgba(255, 0, 0, 0.15);
+            border-left: 5px solid #ff4400;
+            transform: scale(1.01);
+        }
+
+        td {
+            padding: 18px 18px;
+            color: #f0e0e0;
+            border-right: 1px solid #1a0000;
+            vertical-align: middle;
+            font-weight: 400;
+        }
+        td:last-child { border-right: none; }
+
+        .col-nim {
+            font-family: 'Orbitron', sans-serif;
+            color: #ffbb77;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .col-name {
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            font-size: 1rem;
+        }
+
+        /* MISSING BADGE — shows M1, M2... */
+        .missing-badge {
+            background: #1f0707;
+            color: #ff8866;
+            padding: 8px 16px;
+            border-radius: 40px;
+            border: 1px solid #aa3333;
+            font-weight: 600;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.85rem;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 0 18px rgba(255, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+        .missing-badge span {
+            color: #ffaa77;
+        }
+
+        /* PRIORITY BADGES — CATCHY & BOLD */
+        .priority {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-align: center;
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            min-width: 110px;
+            font-family: 'Orbitron', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px currentColor;
+        }
+
+        .priority-critical {
+            background: #8b0000;
+            color: #ffffff;
+            animation: blinkCritical 1.1s infinite;
+            text-shadow: 0 0 20px #ff0000;
+            border-color: #ff3333;
+        }
+        @keyframes blinkCritical {
+            0% { opacity: 1; transform: scale(1); background-color: #990000; box-shadow: 0 0 25px #ff0000; }
+            50% { opacity: 0.5; transform: scale(0.95); background-color: #cc0000; box-shadow: 0 0 60px #ff4400; }
+            100% { opacity: 1; transform: scale(1); background-color: #990000; box-shadow: 0 0 25px #ff0000; }
+        }
+
+        .priority-high {
+            background: #7a3b00;
+            color: #ffffff;
+            animation: pulseHigh 1.6s infinite;
+            text-shadow: 0 0 15px #ff8800;
+            border-color: #ff8800;
+        }
+        @keyframes pulseHigh {
+            0% { transform: scale(1); background-color: #7a3b00; box-shadow: 0 0 15px #ff8800; }
+            50% { transform: scale(1.06); background-color: #b35a00; box-shadow: 0 0 40px #ffaa00; }
+            100% { transform: scale(1); background-color: #7a3b00; box-shadow: 0 0 15px #ff8800; }
+        }
+
+        .priority-medium {
+            background: #6e6300;
+            color: #fff8d0;
+            text-shadow: 0 0 12px #ffee00;
+            border-color: #ffdd44;
+            box-shadow: 0 0 20px rgba(255, 200, 0, 0.4);
+            animation: glowMedium 2s infinite alternate;
+        }
+        @keyframes glowMedium {
+            0% { box-shadow: 0 0 15px rgba(255, 200, 0, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(255, 200, 0, 0.7); }
+        }
+
+        /* ----- FOOTER STATS ----- */
+        .footer-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 18px 10px 0 10px;
+            border-top: 2px solid #330000;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-item {
+            color: #ffaaaa;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+        .stat-item strong {
+            color: #ff4444;
+            font-size: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 15px #ff0000;
+        }
+        .stat-item .highlight-red { color: #ff2222; text-shadow: 0 0 20px #ff0000; }
+        .stat-item .highlight-orange { color: #ff8800; text-shadow: 0 0 15px #ff8800; }
+        .stat-item .highlight-yellow { color: #ffdd00; text-shadow: 0 0 15px #ffdd00; }
+
+        .system-status {
+            color: #44ff88;
+            animation: blinkGreen 1.8s infinite;
+            font-weight: 700;
+        }
+        @keyframes blinkGreen {
+            0% { opacity: 1; text-shadow: 0 0 20px #00ff55; }
+            50% { opacity: 0.2; text-shadow: none; }
+            100% { opacity: 1; text-shadow: 0 0 20px #00ff55; }
+        }
+
+        /* ----- SCROLLING TICKER (CATCHY) ----- */
+        .ticker-wrap {
+            margin-top: 30px;
+            background: #0a0000;
+            border: 2px solid #880000;
+            border-radius: 60px;
+            padding: 14px 25px;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(255, 0, 0, 0.15);
+        }
+
+        .ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollTicker 28s linear infinite;
+            color: #ff7755;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+        }
+
+        .ticker-content span {
+            background: #220000;
+            padding: 5px 18px;
+            border-radius: 40px;
+            margin: 0 12px;
+            border: 1px solid #ff4444;
+            color: #ffaaaa;
+            font-weight: 700;
+        }
+
+        @keyframes scrollTicker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 768px) {
+            .warning-container { padding: 20px 15px; }
+            .glitch-header { font-size: 1.8rem; letter-spacing: 4px; }
+            .sub-header { font-size: 0.8rem; letter-spacing: 2px; }
+            table { font-size: 0.8rem; min-width: 550px; }
+            th, td { padding: 12px 10px; }
+            .priority { min-width: 80px; font-size: 0.65rem; padding: 5px 10px; }
+            .missing-badge { font-size: 0.7rem; padding: 5px 10px; }
+            .footer-stats { flex-direction: column; align-items: flex-start; }
+            .ticker-wrap { padding: 10px 15px; }
+            .ticker-content { font-size: 0.75rem; }
+        }
+
+        @media (max-width: 480px) {
+            .glitch-header { font-size: 1.2rem; letter-spacing: 2px; }
+            .sub-header span { font-size: 0.6rem; padding: 3px 10px; }
+            .col-nim { font-size: 0.7rem; }
+            .col-name { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="warning-container">
+
+    <!-- GLITCH HEADER -->
+    <h1 class="glitch-header">⛔ MISSING ASSIGNMENTS</h1>
+    <div class="sub-header">
+        <span>‼️ ACADEMIC WARNING · ACTION REQUIRED ‼️</span>
+    </div>
+
+    <!-- DATA TABLE -->
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>NIM</th>
+                    <th>Student Name</th>
+                    <th>Missing Assignments</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 🔴 CRITICAL (4) -->
+                <tr>
+                    <td>1</td>
+                    <td class="col-nim">220240006</td>
+                    <td class="col-name">JULLIO RUDOLFO ARWAM</td>
+                    <td><span class="missing-badge">M1, M2, M3, M4, M5, M6</span></td>
+                    <td><span class="priority priority-critical">🔴 CRITICAL</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="col-nim">220240019</td>
+                    <td class="col-name">ALDRIANO FERDINAND MARANY</td>
+                    <td><span class="missing-badge">M1, M2, M3, M4, M5, M6</span></td>
+                    <td><span class="priority priority-critical">🔴 CRITICAL</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="col-nim">220240008</td>
+                    <td class="col-name">RAHEL RIBHOY YOKU</td>
+                    <td><span class="missing-badge">M1, M2, M3, M4, M5, M6</span></td>
+                    <td><span class="priority priority-critical">🔴 CRITICAL</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="col-nim">220240013</td>
+                    <td class="col-name">JENNIFER CHEZYARIKA M. LODONG</td>
+                    <td><span class="missing-badge">M1, M2, M3, M4, M5, M6</span></td>
+                    <td><span class="priority priority-critical">🔴 CRITICAL</span></td>
+                </tr>
+
+                <!-- 🟠 HIGH PRIORITY (7) -->
+                <tr>
+                    <td>5</td>
+                    <td class="col-nim">220240012</td>
+                    <td class="col-name">SITINDAON, WINONA RUTH RENTAMA</td>
+                    <td><span class="missing-badge">M1, M2, M3, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="col-nim">220240014</td>
+                    <td class="col-name">LUBIYANI TIIYO</td>
+                    <td><span class="missing-badge">M1, M2, M3, M5, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="col-nim">220240011</td>
+                    <td class="col-name">VIRGINIA SYALOMITHA MARYAM MANOARFA</td>
+                    <td><span class="missing-badge">M3, M5, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td class="col-nim">220240003</td>
+                    <td class="col-name">SERLINA RADA METTI</td>
+                    <td><span class="missing-badge">M4, M5, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td class="col-nim">220240020</td>
+                    <td class="col-name">PAULIN E. KAKA JALA PADI</td>
+                    <td><span class="missing-badge">M3, M4, M5, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td class="col-nim">220240018</td>
+                    <td class="col-name">HERLINDA RAMBU ATAHUMBA LANDUTANA</td>
+                    <td><span class="missing-badge">M4, M5, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td class="col-nim">220240009</td>
+                    <td class="col-name">SAMUEL DWI CAHYO JAYA</td>
+                    <td><span class="missing-badge">M2, M3, M6</span></td>
+                    <td><span class="priority priority-high">🟠 HIGH</span></td>
+                </tr>
+
+                <!-- 🟡 MEDIUM PRIORITY (2) -->
+                <tr>
+                    <td>12</td>
+                    <td class="col-nim">220240017</td>
+                    <td class="col-name">ERIKA I.S.</td>
+                    <td><span class="missing-badge">M3</span></td>
+                    <td><span class="priority priority-medium">🟡 MEDIUM</span></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td class="col-nim">220240015</td>
+                    <td class="col-name">SURYANI LUKITA GUSTINI HILI</td>
+                    <td><span class="missing-badge">M4</span></td>
+                    <td><span class="priority priority-medium">🟡 MEDIUM</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FOOTER STATS -->
+    <div class="footer-stats">
+        <div class="stat-item">
+            🚨 TOTAL STUDENTS WITH MISSING ASSIGNMENTS: <strong class="highlight-red">13</strong>
+        </div>
+        <div class="stat-item">
+            <span style="color:#ff4444;">🔴 CRITICAL: <strong class="highlight-red">4</strong></span> &nbsp;|&nbsp; 
+            <span style="color:#ff8800;">🟠 HIGH: <strong class="highlight-orange">7</strong></span> &nbsp;|&nbsp; 
+            <span style="color:#ffdd00;">🟡 MEDIUM: <strong class="highlight-yellow">2</strong></span>
+        </div>
+        <div class="stat-item system-status">
+            ⚡ SYSTEM STATUS: ALERT ACTIVE
+        </div>
+    </div>
+
+    <!-- SCROLLING TICKER -->
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            <span>🚨 URGENT</span> Academic warning system activated. <span>⚠️</span> 13 students have outstanding assignments. <span>⏳</span> Immediate action required. <span>🔴</span> 4 students at CRITICAL risk (zero submissions). <span>📢</span> Notify all lecturers.
+        </div>
+    </div>
+
+</div>
+
+<!-- CONSOLE WARNING -->
+<script>
+    (function() {
+        console.warn("%c⚠️ ACADEMIC WARNING SYSTEM ⚠️", "font-size: 28px; font-weight: 900; color: #ff4400; background: #0a0000; padding: 15px; border: 4px solid #ff0000; font-family: 'Orbitron', sans-serif;");
+        console.warn("📌 13 students have incomplete assignments. 4 students are at CRITICAL risk.");
+        console.group("🔴 Critical Priority Students");
+        console.log("1. JULLIO RUDOLFO ARWAM (220240006) - Missing: M1, M2, M3, M4, M5, M6");
+        console.log("2. ALDRIANO FERDINAND MARANY (220240019) - Missing: M1, M2, M3, M4, M5, M6");
+        console.log("3. RAHEL RIBHOY YOKU (220240008) - Missing: M1, M2, M3, M4, M5, M6");
+        console.log("4. JENNIFER CHEZYARIKA M. LODONG (220240013) - Missing: M1, M2, M3, M4, M5, M6");
+        console.groupEnd();
+        console.group("🟠 High Priority Students");
+        console.log("5. SITINDAON, WINONA RUTH RENTAMA - Missing: M1, M2, M3, M6");
+        console.log("6. LUBIYANI TIIYO - Missing: M1, M2, M3, M5, M6");
+        console.log("7. VIRGINIA SYALOMITHA MARYAM MANOARFA - Missing: M3, M5, M6");
+        console.log("8. SERLINA RADA METTI - Missing: M4, M5, M6");
+        console.log("9. PAULIN E. KAKA JALA PADI - Missing: M3, M4, M5, M6");
+        console.log("10. HERLINDA RAMBU ATAHUMBA LANDUTANA - Missing: M4, M5, M6");
+        console.log("11. SAMUEL DWI CAHYO JAYA - Missing: M2, M3, M6");
+        console.groupEnd();
+    })();
+</script>
+
+</body>
+</html>
